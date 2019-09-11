@@ -20,8 +20,6 @@
 
 /node_modules
 /yarn-error.log
-/Gemfile
-/Gemfile.lock
 
 /public/assets
 .byebug_history
