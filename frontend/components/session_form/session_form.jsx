@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -7,19 +8,34 @@ class SessionForm extends React.Component {
       username: '',
       password: ''
     };
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+    let myEvent = (e) => {
+      if (e.currentTarget.value === 'DEMO') {
+        this.setState({ [field]: 'demoUser', 'password': 'password' });
+      } else {
+        this.setState({ [field]: e.currentTarget.value });
+      }
+    }
+
+    return myEvent;
+  }
+
+  handleDemoLogin (e) {
+    if (e.currentTarget.value === 'DEMO') {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(user).then(this.props.closeModal);
   }
 
   renderErrors() {
@@ -35,32 +51,43 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    let formType = this.props.formType;
+    formType = formType.toUpperCase();
+
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to HTO SHOW!
+          <div onClick={this.props.closeModal} className="close-x">X</div>
+          <div className="errors">{this.renderErrors()}</div>
           <br />
-          Please {this.props.formType} or {this.props.navLink}
-          {this.renderErrors()}
-          <div className="login-form">
-            <br />
-            <label>Username:
+          <div className="modal-input">
+            <p className="login-demo-message">LOGIN AS DEMO USER</p>
+            <input type="submit" id="demo-btn" onClick={this.update('username')} className="demo-submit" value="DEMO"/>
+            <fieldset className="wrapper-line">
+              <legend>OR</legend>
+            </fieldset>
+            <div className="modal-title">
+              <h3>SIGN IN</h3>
+            </div>
+            <label className="input-person">
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
+                placeholder="username"
               />
             </label>
             <br />
-            <label>Password:
+            <label>
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
+                placeholder="password"
               />
             </label>
             <br />
-            <input className="session-submit" type="submit" value={this.props.formType} />
+            <input className="session-submit" type="submit" value={formType} />
           </div>
         </form>
       </div>
@@ -68,4 +95,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);
