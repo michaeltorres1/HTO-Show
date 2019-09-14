@@ -385,7 +385,12 @@ function (_React$Component) {
         className: "nav-divider"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "home-image"
-      })));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "testimg"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "home-img",
+        src: window.brentURL
+      })))));
     }
   }]);
 

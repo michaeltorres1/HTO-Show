@@ -41,7 +41,11 @@ class Nav extends React.Component {
           </div>
         </div>
         <div className="nav-divider"></div>
-        <div className="home-image"></div>
+        <div className="home-image">
+          <div className="testimg">
+          <img className="home-img" src={window.brentURL} />
+          </div>
+        </div>
       </div>
       </div>
     );

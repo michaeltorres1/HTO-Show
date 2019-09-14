@@ -20,10 +20,20 @@
  } */
 
  div.home-image {
-   content: url(homepage_movie.jpg);
+   display: flex;
+   justify-content: center;
    width: 100%;
    margin-bottom: 10%;
  }​
+
+ .testimg {
+   width: 100%;
+ }
+
+ img.home-img {
+   width: 1400px;
+ }
+
 
  .modal-background {
    position: fixed;
