@@ -43,7 +43,7 @@ class Nav extends React.Component {
         <div className="nav-divider"></div>
         <div className="home-image">
           <div className="testimg">
-          <img className="home-img" src={window.brentURL} />
+          <img className="home-img" src={window.homeMovie} />
           </div>
         </div>
       </div>
