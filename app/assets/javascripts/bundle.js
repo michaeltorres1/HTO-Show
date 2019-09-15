@@ -147,7 +147,6 @@ var receiveMovie = function receiveMovie(movie) {
   };
 };
 
-debugger;
 var fetchMovies = function fetchMovies() {
   return function (dispatch) {
     return _util_movie_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchMovies"]().then(function (movies) {
@@ -375,15 +374,16 @@ var MovieIndex =
 function (_React$Component) {
   _inherits(MovieIndex, _React$Component);
 
-  function MovieIndex() {
+  function MovieIndex(props) {
     _classCallCheck(this, MovieIndex);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(MovieIndex).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(MovieIndex).call(this, props));
   }
 
   _createClass(MovieIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      debugger;
       this.props.fetchMovies();
     }
   }, {

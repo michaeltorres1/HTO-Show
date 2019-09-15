@@ -8,6 +8,7 @@ class MovieIndex extends React.Component {
   }
   
   componentDidMount () {
+    debugger
     this.props.fetchMovies();
   }
 

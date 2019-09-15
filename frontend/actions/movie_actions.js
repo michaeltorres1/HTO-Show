@@ -5,15 +5,13 @@ export const RECEIVE_MOVIE = 'RECEIVE_MOVIE';
 
 const receiveAllMovies = movies => ({
   type: RECEIVE_ALL_MOVIES,
-  movies,
+  movies
 });
 
 const receiveMovie = movie => ({
   type: RECEIVE_MOVIE,
-  movie,
+  movie
 });
-
-debugger
 
 export const fetchMovies = () => dispatch => {
   return MovieApiUtil.fetchMovies().then(movies => dispatch(receiveAllMovies(movies)))
