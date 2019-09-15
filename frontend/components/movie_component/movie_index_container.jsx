@@ -4,7 +4,7 @@ import { fetchMovies } from '../../actions/movie_actions';
 
 const mapStateToProps = state => {
   return {
-    movies: Object.keys(state.movies).map(id => state.movies[id]),
+    movies: Object.keys(state.entities.movies).map(id => state.entities.movies[id]),
   }
 };
 

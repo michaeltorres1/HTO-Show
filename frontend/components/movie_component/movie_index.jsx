@@ -8,11 +8,11 @@ class MovieIndex extends React.Component {
   }
   
   componentDidMount () {
-    debugger
     this.props.fetchMovies();
   }
 
   render () {
+    
     let movies = this.props.movies.map(movie => {
       return (
         <li key={movie.id} movie={movie}></li>

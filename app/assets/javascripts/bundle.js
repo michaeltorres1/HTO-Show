@@ -383,7 +383,6 @@ function (_React$Component) {
   _createClass(MovieIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      debugger;
       this.props.fetchMovies();
     }
   }, {
@@ -424,8 +423,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    movies: Object.keys(state.movies).map(function (id) {
-      return state.movies[id];
+    movies: Object.keys(state.entities.movies).map(function (id) {
+      return state.entities.movies[id];
     })
   };
 };
@@ -1246,13 +1245,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchMovies", function() { return fetchMovies; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchMovie", function() { return fetchMovie; });
 var fetchMovies = function fetchMovies() {
-  $.ajax({
+  return $.ajax({
     method: 'GET',
     url: 'api/movies'
   });
 };
 var fetchMovie = function fetchMovie(id) {
-  $.ajax({
+  return $.ajax({
     method: 'GET',
     url: "api/movies/".concat(id)
   });
@@ -31143,7 +31142,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
