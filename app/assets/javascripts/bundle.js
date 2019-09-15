@@ -115,6 +115,56 @@ var closeModal = function closeModal() {
 
 /***/ }),
 
+/***/ "./frontend/actions/movie_actions.js":
+/*!*******************************************!*\
+  !*** ./frontend/actions/movie_actions.js ***!
+  \*******************************************/
+/*! exports provided: RECEIVE_ALL_MOVIES, RECEIVE_MOVIE, fetchMovies, fetchMovie */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_MOVIES", function() { return RECEIVE_ALL_MOVIES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_MOVIE", function() { return RECEIVE_MOVIE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchMovies", function() { return fetchMovies; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchMovie", function() { return fetchMovie; });
+/* harmony import */ var _util_movie_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/movie_api_util */ "./frontend/util/movie_api_util.js");
+
+var RECEIVE_ALL_MOVIES = 'RECEIVE_ALL_MOVIES';
+var RECEIVE_MOVIE = 'RECEIVE_MOVIE';
+
+var receiveAllMovies = function receiveAllMovies(movies) {
+  return {
+    type: RECEIVE_ALL_MOVIES,
+    movies: movies
+  };
+};
+
+var receiveMovie = function receiveMovie(movie) {
+  return {
+    type: RECEIVE_MOVIE,
+    movie: movie
+  };
+};
+
+debugger;
+var fetchMovies = function fetchMovies() {
+  return function (dispatch) {
+    return _util_movie_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchMovies"]().then(function (movies) {
+      return dispatch(receiveAllMovies(movies));
+    });
+  };
+};
+var fetchMovie = function fetchMovie(id) {
+  return function (dispatch) {
+    return _util_movie_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchMovie"](id).then(function (movie) {
+      return dispatch(receiveMovie(movie));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/session_actions.js":
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
@@ -194,14 +244,22 @@ var logout = function logout() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
-/* harmony import */ var _nav_component_nav_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nav_component/nav_container */ "./frontend/components/nav_component/nav_container.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _modal_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modal/modal */ "./frontend/components/modal/modal.jsx");
+/* harmony import */ var _nav_component_nav_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./nav_component/nav_container */ "./frontend/components/nav_component/nav_container.jsx");
+/* harmony import */ var _movie_component_movie_index_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./movie_component/movie_index_container */ "./frontend/components/movie_component/movie_index_container.jsx");
+
+
 
 
 
 
 var App = function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_component_nav_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modal_modal__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_component_nav_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
+    path: "/movies",
+    component: _movie_component_movie_index_container__WEBPACK_IMPORTED_MODULE_4__["default"]
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -278,6 +336,109 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(Modal));
+
+/***/ }),
+
+/***/ "./frontend/components/movie_component/movie_index.jsx":
+/*!*************************************************************!*\
+  !*** ./frontend/components/movie_component/movie_index.jsx ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var MovieIndex =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(MovieIndex, _React$Component);
+
+  function MovieIndex() {
+    _classCallCheck(this, MovieIndex);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(MovieIndex).apply(this, arguments));
+  }
+
+  _createClass(MovieIndex, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchMovies();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var movies = this.props.movies.map(function (movie) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: movie.id,
+          movie: movie
+        });
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, movies));
+    }
+  }]);
+
+  return MovieIndex;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (MovieIndex);
+
+/***/ }),
+
+/***/ "./frontend/components/movie_component/movie_index_container.jsx":
+/*!***********************************************************************!*\
+  !*** ./frontend/components/movie_component/movie_index_container.jsx ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _movie_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./movie_index */ "./frontend/components/movie_component/movie_index.jsx");
+/* harmony import */ var _actions_movie_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/movie_actions */ "./frontend/actions/movie_actions.js");
+
+
+
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    movies: Object.keys(state.movies).map(function (id) {
+      return state.movies[id];
+    })
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchMovies: function fetchMovies() {
+      return dispatch(Object(_actions_movie_actions__WEBPACK_IMPORTED_MODULE_2__["fetchMovies"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_movie_index__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 
@@ -487,24 +648,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
 /* harmony import */ var _session_form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./session_form */ "./frontend/components/session_form/session_form.jsx");
-// import { connect } from 'react-redux';
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// import { login } from '../../actions/session_actions';
-// import SessionForm from './session_form';
-// const mapStateToProps = ({ errors }) => {
-//   return {
-//     errors: errors.session,
-//     formType: 'login',
-//     navLink: <Link to="/signup">sign up instead</Link>,
-//   };
-// };
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     processForm: (user) => dispatch(login(user)),
-//   };
-// };
-// export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
 
 
 
@@ -763,7 +906,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_movie_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./actions/movie_actions */ "./frontend/actions/movie_actions.js");
+/* harmony import */ var _reducers_movies_reducer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./reducers/movies_reducer */ "./frontend/reducers/movies_reducer.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -790,6 +937,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.login = _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["login"];
   window.logout = _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["logout"];
+  window.fetchMovies = _actions_movie_actions__WEBPACK_IMPORTED_MODULE_5__["fetchMovies"];
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   var root = document.getElementById('root');
@@ -811,10 +959,13 @@ document.addEventListener("DOMContentLoaded", function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
+/* harmony import */ var _movies_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./movies_reducer */ "./frontend/reducers/movies_reducer.js");
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
+  users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
+  movies: _movies_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 }));
 
 /***/ }),
@@ -868,6 +1019,43 @@ function modalReducer() {
 
 /***/ }),
 
+/***/ "./frontend/reducers/movies_reducer.js":
+/*!*********************************************!*\
+  !*** ./frontend/reducers/movies_reducer.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_movie_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/movie_actions */ "./frontend/actions/movie_actions.js");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var MoviesReducer = function MoviesReducer() {
+  var oldState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(oldState);
+  var newState;
+
+  switch (action.type) {
+    case _actions_movie_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_MOVIES"]:
+      return Object.assign({}, oldState, action.movies);
+
+    case _actions_movie_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_MOVIE"]:
+      newState = Object.assign({}, oldstate, _defineProperty({}, action.movie.id, action.movie));
+      return newState;
+
+    default:
+      return oldState;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (MoviesReducer);
+
+/***/ }),
+
 /***/ "./frontend/reducers/root_reducer.js":
 /*!*******************************************!*\
   !*** ./frontend/reducers/root_reducer.js ***!
@@ -886,6 +1074,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+ // import movies from './movies_reducer';
 
 var rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   entities: _entities_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -1038,11 +1227,36 @@ __webpack_require__.r(__webpack_exports__);
 
 var configureStore = function configureStore() {
   var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_3__["default"], preloadedState, // remove logger
-  Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1__["default"], redux_logger__WEBPACK_IMPORTED_MODULE_2___default.a));
+  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_3__["default"], preloadedState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1__["default"], redux_logger__WEBPACK_IMPORTED_MODULE_2___default.a));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/movie_api_util.js":
+/*!*****************************************!*\
+  !*** ./frontend/util/movie_api_util.js ***!
+  \*****************************************/
+/*! exports provided: fetchMovies, fetchMovie */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchMovies", function() { return fetchMovies; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchMovie", function() { return fetchMovie; });
+var fetchMovies = function fetchMovies() {
+  $.ajax({
+    method: 'GET',
+    url: 'api/movies'
+  });
+};
+var fetchMovie = function fetchMovie(id) {
+  $.ajax({
+    method: 'GET',
+    url: "api/movies/".concat(id)
+  });
+};
 
 /***/ }),
 
