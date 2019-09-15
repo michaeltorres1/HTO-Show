@@ -149,6 +149,7 @@ var receiveMovie = function receiveMovie(movie) {
 
 var fetchMovies = function fetchMovies() {
   return function (dispatch) {
+    console.log("i'm here");
     return _util_movie_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchMovies"]().then(function (movies) {
       return dispatch(receiveAllMovies(movies));
     });

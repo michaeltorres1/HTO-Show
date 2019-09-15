@@ -1,6 +1,5 @@
-class MoviesController < ApplicationController
+class Api::MoviesController < ApplicationController
   def index
-    debugger
     @movies = Movie.all
     render :index
   end
