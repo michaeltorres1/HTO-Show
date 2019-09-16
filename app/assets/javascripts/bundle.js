@@ -149,7 +149,6 @@ var receiveMovie = function receiveMovie(movie) {
 
 var fetchMovies = function fetchMovies() {
   return function (dispatch) {
-    console.log("i'm here");
     return _util_movie_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchMovies"]().then(function (movies) {
       return dispatch(receiveAllMovies(movies));
     });
@@ -375,10 +374,10 @@ var MovieIndex =
 function (_React$Component) {
   _inherits(MovieIndex, _React$Component);
 
-  function MovieIndex(props) {
+  function MovieIndex() {
     _classCallCheck(this, MovieIndex);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(MovieIndex).call(this, props));
+    return _possibleConstructorReturn(this, _getPrototypeOf(MovieIndex).apply(this, arguments));
   }
 
   _createClass(MovieIndex, [{
@@ -391,9 +390,8 @@ function (_React$Component) {
     value: function render() {
       var movies = this.props.movies.map(function (movie) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: movie.id,
-          movie: movie
-        });
+          key: movie.id
+        }, movie.title);
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, movies));
     }
@@ -424,8 +422,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    movies: Object.keys(state.entities.movies).map(function (id) {
-      return state.entities.movies[id];
+    movies: Object.keys(state.entities.movies).map(function (movie) {
+      return state.entities.movies[movie];
     })
   };
 };

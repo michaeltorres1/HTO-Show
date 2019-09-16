@@ -4,6 +4,7 @@ const MoviesReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState;
 
+  
   switch (action.type) {
     case RECEIVE_ALL_MOVIES:
       return Object.assign({}, oldState, action.movies);

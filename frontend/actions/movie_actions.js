@@ -14,7 +14,6 @@ const receiveMovie = movie => ({
 });
  
 export const fetchMovies = () => dispatch => {
-  console.log("i'm here");
   return MovieApiUtil.fetchMovies().then(movies => dispatch(receiveAllMovies(movies)))
 };
 
