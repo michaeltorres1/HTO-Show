@@ -12,7 +12,7 @@ const receiveMovie = movie => ({
   type: RECEIVE_MOVIE,
   movie
 });
- 
+
 export const fetchMovies = () => dispatch => {
   return MovieApiUtil.fetchMovies().then(movies => dispatch(receiveAllMovies(movies)))
 };

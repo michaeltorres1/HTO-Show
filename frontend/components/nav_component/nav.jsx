@@ -1,4 +1,5 @@
 import React from 'react';
+import Home from '../home_component/home';
 
 class Nav extends React.Component {
 
@@ -37,15 +38,10 @@ class Nav extends React.Component {
           </div>
           <div className="right">
             {signup}
-            <div onClick={() => this.props.openModal('login')} className="nav-item nav-signin">{username}</div>
+            <div onClick={() => this.props.openModal('login')} className="nav-item nav-signin">Hi {username}!</div>
           </div>
         </div>
         <div className="nav-divider"></div>
-        <div className="home-image">
-          <div className="testimg">
-          <img className="home-img" src={window.homeMovie} />
-          </div>
-        </div>
       </div>
       </div>
     );
