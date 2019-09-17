@@ -10,7 +10,7 @@ class Nav extends React.Component {
 
   render() {
     let user = this.props.currentUser;
-    let username = user ? user.username.toUpperCase() : "SIGN IN";
+    let username = user ? "HI " + user.username.toUpperCase() + "!" : "SIGN IN";
     let signup;
 
     if (username === "SIGN IN") {
@@ -38,7 +38,7 @@ class Nav extends React.Component {
           </div>
           <div className="right">
             {signup}
-            <div onClick={() => this.props.openModal('login')} className="nav-item nav-signin">Hi {username}!</div>
+            <div onClick={() => this.props.openModal('login')} className="nav-item nav-signin">{username}</div>
           </div>
         </div>
         <div className="nav-divider"></div>

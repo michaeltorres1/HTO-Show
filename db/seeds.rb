@@ -9,6 +9,16 @@
 Movie.destroy_all
 
 Movie.create!(title: "Aquaman", release_date: "9-12-2018", rating: "5", description: "A water hero movie", director_id: 1, producer_id: 2, writer_id: 3, date_added: "9-10-2019")
+Movie.create!(title: "mqofs", release_date: "9-11-2017", rating: "4", description: "A red head movie", director_id: 3, producer_id: 1, writer_id: 2, date_added: "9-11-2018")
+Movie.create!(title: "Test", release_date: "10-11-2016", rating: "3", description: "A test movie", director_id: 1, producer_id: 2, writer_id: 3, date_added: "10-12-2018")
+Movie.create!(title: "Purple", release_date: "10-11-2016", rating: "5", description: "A purple movie", director_id: 4, producer_id: 5, writer_id: 6, date_added: "10-12-2018")
 
 aquaman = Movie.find_by(title: "Aquaman")
+mqofs = Movie.find_by(title: "mqofs")
+test = Movie.find_by(title: "Test")
+purple = Movie.find_by(title: "Purple")
+
 aquaman.photo.attach(io: File.open("/Users/michaeltorres/Desktop/movie_pics/aquaman.jpg"), filename: "aquaman.jpg")
+mqofs.photo.attach(io: File.open("/Users/michaeltorres/Desktop/movie_pics/mqofs.jpg"), filename: "mqofs.jpg")
+test.photo.attach(io: File.open("/Users/michaeltorres/Desktop/movie_pics/test.jpg"), filename: "test.jpg")
+purple.photo.attach(io: File.open("/Users/michaeltorres/Desktop/movie_pics/purple.jpg"), filename: "purple.jpg")

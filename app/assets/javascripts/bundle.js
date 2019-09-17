@@ -576,7 +576,7 @@ function (_React$Component) {
       var _this2 = this;
 
       var user = this.props.currentUser;
-      var username = user ? user.username.toUpperCase() : "SIGN IN";
+      var username = user ? "HI " + user.username.toUpperCase() + "!" : "SIGN IN";
       var signup;
 
       if (username === "SIGN IN") {
@@ -624,7 +624,7 @@ function (_React$Component) {
           return _this2.props.openModal('login');
         },
         className: "nav-item nav-signin"
-      }, "Hi ", username, "!"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, username))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav-divider"
       })));
     }
