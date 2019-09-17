@@ -13,8 +13,10 @@ class MovieIndex extends React.Component {
     let movies = this.props.movies.map(movie => {
       return (
         <li key={movie.id}>
-          <img src={movie.photoUrl} alt="" className="movie-img"/>
-          <div className="movie-title">{movie.title}</div>
+          <div className="movie-img-container">
+            <img src={movie.photoUrl} alt="" className="movie-img"/>
+            <div className="movie-title">{movie.title}</div>
+          </div>
         </li>
       )
     });

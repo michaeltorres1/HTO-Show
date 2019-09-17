@@ -321,11 +321,18 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "home-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "home-image-container"
+        className: "home-image-container-slider"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slide"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "home-img",
         src: window.homeMovie
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_movie_component_movie_index_container__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slide"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "home-img",
+        src: window.homeMovie1
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_movie_component_movie_index_container__WEBPACK_IMPORTED_MODULE_1__["default"], null));
     }
   }]);
 
@@ -463,13 +470,15 @@ function (_React$Component) {
       var movies = this.props.movies.map(function (movie) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: movie.id
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "movie-img-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: movie.photoUrl,
           alt: "",
           className: "movie-img"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "movie-title"
-        }, movie.title));
+        }, movie.title)));
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "movie-container"
@@ -533,7 +542,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _home_component_home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../home_component/home */ "./frontend/components/home_component/home.jsx");
+/* harmony import */ var react_sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-sidebar */ "./node_modules/react-sidebar/dist/react-sidebar.esm.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -552,8 +561,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+ // import Home from '../home_component/home';
 
-
+ // TODO MAKE A SIDEBAR OR COLLAPSIBLE MENU
 
 var Nav =
 /*#__PURE__*/
@@ -576,7 +586,7 @@ function (_React$Component) {
       var _this2 = this;
 
       var user = this.props.currentUser;
-      var username = user ? "HI " + user.username.toUpperCase() + "!" : "SIGN IN";
+      var username = user ? "HI " + user.username.toUpperCase() : "SIGN IN";
       var signup;
 
       if (username === "SIGN IN") {
@@ -604,7 +614,6 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "left"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "#",
         className: "nav-item nav-browse"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "material-icons nav-icon nav-icon-browse"
@@ -1374,6 +1383,51 @@ var logout = function logout() {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+module.exports = _assertThisInitialized;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/defineProperty.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/defineProperty.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+module.exports = _defineProperty;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/extends.js":
 /*!************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/extends.js ***!
@@ -1463,6 +1517,38 @@ function _inheritsLoose(subClass, superClass) {
 }
 
 module.exports = _inheritsLoose;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/objectSpread.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/objectSpread.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var defineProperty = __webpack_require__(/*! ./defineProperty */ "./node_modules/@babel/runtime/helpers/defineProperty.js");
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+    var ownKeys = Object.keys(source);
+
+    if (typeof Object.getOwnPropertySymbols === 'function') {
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      defineProperty(target, key, source[key]);
+    });
+  }
+
+  return target;
+}
+
+module.exports = _objectSpread;
 
 /***/ }),
 
@@ -32278,6 +32364,443 @@ if (true) {
 }
 
 
+
+
+/***/ }),
+
+/***/ "./node_modules/react-sidebar/dist/react-sidebar.esm.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/react-sidebar/dist/react-sidebar.esm.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/objectSpread */ "./node_modules/@babel/runtime/helpers/objectSpread.js");
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/inheritsLoose */ "./node_modules/@babel/runtime/helpers/inheritsLoose.js");
+/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+
+var CANCEL_DISTANCE_ON_SCROLL = 20;
+var defaultStyles = {
+  root: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    overflow: "hidden"
+  },
+  sidebar: {
+    zIndex: 2,
+    position: "absolute",
+    top: 0,
+    bottom: 0,
+    transition: "transform .3s ease-out",
+    WebkitTransition: "-webkit-transform .3s ease-out",
+    willChange: "transform",
+    overflowY: "auto"
+  },
+  content: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    overflowY: "auto",
+    WebkitOverflowScrolling: "touch",
+    transition: "left .3s ease-out, right .3s ease-out"
+  },
+  overlay: {
+    zIndex: 1,
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    opacity: 0,
+    visibility: "hidden",
+    transition: "opacity .3s ease-out, visibility .3s ease-out",
+    backgroundColor: "rgba(0,0,0,.3)"
+  },
+  dragHandle: {
+    zIndex: 1,
+    position: "fixed",
+    top: 0,
+    bottom: 0
+  }
+};
+
+var Sidebar =
+/*#__PURE__*/
+function (_Component) {
+  _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1___default()(Sidebar, _Component);
+
+  function Sidebar(props) {
+    var _this;
+
+    _this = _Component.call(this, props) || this;
+    _this.state = {
+      // the detected width of the sidebar in pixels
+      sidebarWidth: props.defaultSidebarWidth,
+      // keep track of touching params
+      touchIdentifier: null,
+      touchStartX: null,
+      touchCurrentX: null,
+      // if touch is supported by the browser
+      dragSupported: false
+    };
+    _this.overlayClicked = _this.overlayClicked.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this)));
+    _this.onTouchStart = _this.onTouchStart.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this)));
+    _this.onTouchMove = _this.onTouchMove.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this)));
+    _this.onTouchEnd = _this.onTouchEnd.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this)));
+    _this.onScroll = _this.onScroll.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this)));
+    _this.saveSidebarRef = _this.saveSidebarRef.bind(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2___default()(_this)));
+    return _this;
+  }
+
+  var _proto = Sidebar.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    var isIos = /iPad|iPhone|iPod/.test(navigator ? navigator.userAgent : "");
+    this.setState({
+      dragSupported: typeof window === "object" && "ontouchstart" in window && !isIos
+    });
+    this.saveSidebarWidth();
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate() {
+    // filter out the updates when we're touching
+    if (!this.isTouching()) {
+      this.saveSidebarWidth();
+    }
+  };
+
+  _proto.onTouchStart = function onTouchStart(ev) {
+    // filter out if a user starts swiping with a second finger
+    if (!this.isTouching()) {
+      var touch = ev.targetTouches[0];
+      this.setState({
+        touchIdentifier: touch.identifier,
+        touchStartX: touch.clientX,
+        touchCurrentX: touch.clientX
+      });
+    }
+  };
+
+  _proto.onTouchMove = function onTouchMove(ev) {
+    if (this.isTouching()) {
+      for (var ind = 0; ind < ev.targetTouches.length; ind++) {
+        // we only care about the finger that we are tracking
+        if (ev.targetTouches[ind].identifier === this.state.touchIdentifier) {
+          this.setState({
+            touchCurrentX: ev.targetTouches[ind].clientX
+          });
+          break;
+        }
+      }
+    }
+  };
+
+  _proto.onTouchEnd = function onTouchEnd() {
+    if (this.isTouching()) {
+      // trigger a change to open if sidebar has been dragged beyond dragToggleDistance
+      var touchWidth = this.touchSidebarWidth();
+
+      if (this.props.open && touchWidth < this.state.sidebarWidth - this.props.dragToggleDistance || !this.props.open && touchWidth > this.props.dragToggleDistance) {
+        this.props.onSetOpen(!this.props.open);
+      }
+
+      this.setState({
+        touchIdentifier: null,
+        touchStartX: null,
+        touchCurrentX: null
+      });
+    }
+  }; // This logic helps us prevents the user from sliding the sidebar horizontally
+  // while scrolling the sidebar vertically. When a scroll event comes in, we're
+  // cancelling the ongoing gesture if it did not move horizontally much.
+
+
+  _proto.onScroll = function onScroll() {
+    if (this.isTouching() && this.inCancelDistanceOnScroll()) {
+      this.setState({
+        touchIdentifier: null,
+        touchStartX: null,
+        touchCurrentX: null
+      });
+    }
+  }; // True if the on going gesture X distance is less than the cancel distance
+
+
+  _proto.inCancelDistanceOnScroll = function inCancelDistanceOnScroll() {
+    var cancelDistanceOnScroll;
+
+    if (this.props.pullRight) {
+      cancelDistanceOnScroll = Math.abs(this.state.touchCurrentX - this.state.touchStartX) < CANCEL_DISTANCE_ON_SCROLL;
+    } else {
+      cancelDistanceOnScroll = Math.abs(this.state.touchStartX - this.state.touchCurrentX) < CANCEL_DISTANCE_ON_SCROLL;
+    }
+
+    return cancelDistanceOnScroll;
+  };
+
+  _proto.isTouching = function isTouching() {
+    return this.state.touchIdentifier !== null;
+  };
+
+  _proto.overlayClicked = function overlayClicked() {
+    if (this.props.open) {
+      this.props.onSetOpen(false);
+    }
+  };
+
+  _proto.saveSidebarWidth = function saveSidebarWidth() {
+    var width = this.sidebar.offsetWidth;
+
+    if (width !== this.state.sidebarWidth) {
+      this.setState({
+        sidebarWidth: width
+      });
+    }
+  };
+
+  _proto.saveSidebarRef = function saveSidebarRef(node) {
+    this.sidebar = node;
+  }; // calculate the sidebarWidth based on current touch info
+
+
+  _proto.touchSidebarWidth = function touchSidebarWidth() {
+    // if the sidebar is open and start point of drag is inside the sidebar
+    // we will only drag the distance they moved their finger
+    // otherwise we will move the sidebar to be below the finger.
+    if (this.props.pullRight) {
+      if (this.props.open && window.innerWidth - this.state.touchStartX < this.state.sidebarWidth) {
+        if (this.state.touchCurrentX > this.state.touchStartX) {
+          return this.state.sidebarWidth + this.state.touchStartX - this.state.touchCurrentX;
+        }
+
+        return this.state.sidebarWidth;
+      }
+
+      return Math.min(window.innerWidth - this.state.touchCurrentX, this.state.sidebarWidth);
+    }
+
+    if (this.props.open && this.state.touchStartX < this.state.sidebarWidth) {
+      if (this.state.touchCurrentX > this.state.touchStartX) {
+        return this.state.sidebarWidth;
+      }
+
+      return this.state.sidebarWidth - this.state.touchStartX + this.state.touchCurrentX;
+    }
+
+    return Math.min(this.state.touchCurrentX, this.state.sidebarWidth);
+  };
+
+  _proto.render = function render() {
+    var sidebarStyle = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({}, defaultStyles.sidebar, this.props.styles.sidebar);
+
+    var contentStyle = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({}, defaultStyles.content, this.props.styles.content);
+
+    var overlayStyle = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({}, defaultStyles.overlay, this.props.styles.overlay);
+
+    var useTouch = this.state.dragSupported && this.props.touch;
+    var isTouching = this.isTouching();
+    var rootProps = {
+      className: this.props.rootClassName,
+      style: _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({}, defaultStyles.root, this.props.styles.root),
+      role: "navigation",
+      id: this.props.rootId
+    };
+    var dragHandle;
+    var hasBoxShadow = this.props.shadow && (isTouching || this.props.open || this.props.docked); // sidebarStyle right/left
+
+    if (this.props.pullRight) {
+      sidebarStyle.right = 0;
+      sidebarStyle.transform = "translateX(100%)";
+      sidebarStyle.WebkitTransform = "translateX(100%)";
+
+      if (hasBoxShadow) {
+        sidebarStyle.boxShadow = "-2px 2px 4px rgba(0, 0, 0, 0.15)";
+      }
+    } else {
+      sidebarStyle.left = 0;
+      sidebarStyle.transform = "translateX(-100%)";
+      sidebarStyle.WebkitTransform = "translateX(-100%)";
+
+      if (hasBoxShadow) {
+        sidebarStyle.boxShadow = "2px 2px 4px rgba(0, 0, 0, 0.15)";
+      }
+    }
+
+    if (isTouching) {
+      var percentage = this.touchSidebarWidth() / this.state.sidebarWidth; // slide open to what we dragged
+
+      if (this.props.pullRight) {
+        sidebarStyle.transform = "translateX(" + (1 - percentage) * 100 + "%)";
+        sidebarStyle.WebkitTransform = "translateX(" + (1 - percentage) * 100 + "%)";
+      } else {
+        sidebarStyle.transform = "translateX(-" + (1 - percentage) * 100 + "%)";
+        sidebarStyle.WebkitTransform = "translateX(-" + (1 - percentage) * 100 + "%)";
+      } // fade overlay to match distance of drag
+
+
+      overlayStyle.opacity = percentage;
+      overlayStyle.visibility = "visible";
+    } else if (this.props.docked) {
+      // show sidebar
+      if (this.state.sidebarWidth !== 0) {
+        sidebarStyle.transform = "translateX(0%)";
+        sidebarStyle.WebkitTransform = "translateX(0%)";
+      } // make space on the left/right side of the content for the sidebar
+
+
+      if (this.props.pullRight) {
+        contentStyle.right = this.state.sidebarWidth + "px";
+      } else {
+        contentStyle.left = this.state.sidebarWidth + "px";
+      }
+    } else if (this.props.open) {
+      // slide open sidebar
+      sidebarStyle.transform = "translateX(0%)";
+      sidebarStyle.WebkitTransform = "translateX(0%)"; // show overlay
+
+      overlayStyle.opacity = 1;
+      overlayStyle.visibility = "visible";
+    }
+
+    if (isTouching || !this.props.transitions) {
+      sidebarStyle.transition = "none";
+      sidebarStyle.WebkitTransition = "none";
+      contentStyle.transition = "none";
+      overlayStyle.transition = "none";
+    }
+
+    if (useTouch) {
+      if (this.props.open) {
+        rootProps.onTouchStart = this.onTouchStart;
+        rootProps.onTouchMove = this.onTouchMove;
+        rootProps.onTouchEnd = this.onTouchEnd;
+        rootProps.onTouchCancel = this.onTouchEnd;
+        rootProps.onScroll = this.onScroll;
+      } else {
+        var dragHandleStyle = _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0___default()({}, defaultStyles.dragHandle, this.props.styles.dragHandle);
+
+        dragHandleStyle.width = this.props.touchHandleWidth; // dragHandleStyle right/left
+
+        if (this.props.pullRight) {
+          dragHandleStyle.right = 0;
+        } else {
+          dragHandleStyle.left = 0;
+        }
+
+        dragHandle = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+          style: dragHandleStyle,
+          onTouchStart: this.onTouchStart,
+          onTouchMove: this.onTouchMove,
+          onTouchEnd: this.onTouchEnd,
+          onTouchCancel: this.onTouchEnd
+        });
+      }
+    }
+
+    return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", rootProps, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+      className: this.props.sidebarClassName,
+      style: sidebarStyle,
+      ref: this.saveSidebarRef,
+      id: this.props.sidebarId
+    }, this.props.sidebar), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+      className: this.props.overlayClassName,
+      style: overlayStyle,
+      onClick: this.overlayClicked,
+      id: this.props.overlayId
+    }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+      className: this.props.contentClassName,
+      style: contentStyle,
+      id: this.props.contentId
+    }, dragHandle, this.props.children));
+  };
+
+  return Sidebar;
+}(react__WEBPACK_IMPORTED_MODULE_3__["Component"]);
+
+ true ? Sidebar.propTypes = {
+  // main content to render
+  children: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.node.isRequired,
+  // styles
+  styles: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.shape({
+    root: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.object,
+    sidebar: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.object,
+    content: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.object,
+    overlay: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.object,
+    dragHandle: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.object
+  }),
+  // root component optional class
+  rootClassName: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string,
+  // sidebar optional class
+  sidebarClassName: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string,
+  // content optional class
+  contentClassName: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string,
+  // overlay optional class
+  overlayClassName: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string,
+  // sidebar content to render
+  sidebar: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.node.isRequired,
+  // boolean if sidebar should be docked
+  docked: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.bool,
+  // boolean if sidebar should slide open
+  open: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.bool,
+  // boolean if transitions should be disabled
+  transitions: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.bool,
+  // boolean if touch gestures are enabled
+  touch: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.bool,
+  // max distance from the edge we can start touching
+  touchHandleWidth: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.number,
+  // Place the sidebar on the right
+  pullRight: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.bool,
+  // Enable/Disable sidebar shadow
+  shadow: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.bool,
+  // distance we have to drag the sidebar to toggle open state
+  dragToggleDistance: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.number,
+  // callback called when the overlay is clicked
+  onSetOpen: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.func,
+  // Initial sidebar width when page loads
+  defaultSidebarWidth: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.number,
+  // root component optional id
+  rootId: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string,
+  // sidebar optional id
+  sidebarId: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string,
+  // content optional id
+  contentId: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string,
+  // overlay optional id
+  overlayId: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string
+} : undefined;
+Sidebar.defaultProps = {
+  docked: false,
+  open: false,
+  transitions: true,
+  touch: true,
+  touchHandleWidth: 20,
+  pullRight: false,
+  shadow: true,
+  dragToggleDistance: 30,
+  onSetOpen: function onSetOpen() {},
+  styles: {},
+  defaultSidebarWidth: 0
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Sidebar);
 
 
 /***/ }),

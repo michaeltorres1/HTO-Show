@@ -1,6 +1,9 @@
 import React from 'react';
-import Home from '../home_component/home';
+// import Home from '../home_component/home';
+import Sidebar from "react-sidebar";
 
+
+// TODO MAKE A SIDEBAR OR COLLAPSIBLE MENU
 class Nav extends React.Component {
 
   constructor (props) {
@@ -10,7 +13,7 @@ class Nav extends React.Component {
 
   render() {
     let user = this.props.currentUser;
-    let username = user ? "HI " + user.username.toUpperCase() + "!" : "SIGN IN";
+    let username = user ? "HI " + user.username.toUpperCase() : "SIGN IN";
     let signup;
 
     if (username === "SIGN IN") {
@@ -24,7 +27,7 @@ class Nav extends React.Component {
       <div className="home-content">
         <div className="nav">
           <div className="left">
-            <a href="#" className="nav-item nav-browse">
+            <a className="nav-item nav-browse">
               <i className="material-icons nav-icon nav-icon-browse">menu</i>
               BROWSE
             </a>

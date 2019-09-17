@@ -16,3 +16,16 @@
   max-height: 210px;
 }
 
+.movie-img-container {
+  transition: transform .2s; /* Animation */
+}
+
+.movie-img-container:hover {
+  transform: scale(1.2);
+}
+
+.movie-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
