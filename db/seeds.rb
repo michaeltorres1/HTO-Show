@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'open-uri'
+
 Movie.destroy_all
 
 Movie.create!(title: "Aquaman", release_date: "9-12-2018", rating: "5", description: "A water hero movie", director_id: 1, producer_id: 2, writer_id: 3, date_added: "9-10-2019")
@@ -18,7 +20,9 @@ mqofs = Movie.find_by(title: "mqofs")
 test = Movie.find_by(title: "Test")
 purple = Movie.find_by(title: "Purple")
 
-aquaman.photo.attach(io: File.open("/Users/michaeltorres/Desktop/movie_pics/aquaman.jpg"), filename: "aquaman.jpg")
-mqofs.photo.attach(io: File.open("/Users/michaeltorres/Desktop/movie_pics/mqofs.jpg"), filename: "mqofs.jpg")
-test.photo.attach(io: File.open("/Users/michaeltorres/Desktop/movie_pics/test.jpg"), filename: "test.jpg")
-purple.photo.attach(io: File.open("/Users/michaeltorres/Desktop/movie_pics/purple.jpg"), filename: "purple.jpg")
+# aquaman.photo.attach(io: File.open("/Users/michaeltorres/Desktop/movie_pics/aquaman.jpg"), filename: "aquaman.jpg")
+# mqofs.photo.attach(io: File.open("/Users/michaeltorres/Desktop/movie_pics/mqofs.jpg"), filename: "mqofs.jpg")
+# test.photo.attach(io: File.open("/Users/michaeltorres/Desktop/movie_pics/test.jpg"), filename: "test.jpg")
+# purple.photo.attach(io: File.open("/Users/michaeltorres/Desktop/movie_pics/purple.jpg"), filename: "purple.jpg")
+purple_photo = open("https://htoshow-app-seeds.s3-us-west-1.amazonaws.com/purple.jpg")
+purple.photo.attach(io: purple_photo, filename: "purple.jpg")
