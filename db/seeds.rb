@@ -24,5 +24,13 @@ purple = Movie.find_by(title: "Purple")
 # mqofs.photo.attach(io: File.open("/Users/michaeltorres/Desktop/movie_pics/mqofs.jpg"), filename: "mqofs.jpg")
 # test.photo.attach(io: File.open("/Users/michaeltorres/Desktop/movie_pics/test.jpg"), filename: "test.jpg")
 # purple.photo.attach(io: File.open("/Users/michaeltorres/Desktop/movie_pics/purple.jpg"), filename: "purple.jpg")
+
+aquaman_photo = open("https://htoshow-app-seeds.s3-us-west-1.amazonaws.com/aquaman.jpg")
+mqofs_photo = open("https://htoshow-app-seeds.s3-us-west-1.amazonaws.com/mqofs.jpg")
+test_photo = open("https://htoshow-app-seeds.s3-us-west-1.amazonaws.com/test.jpg")
 purple_photo = open("https://htoshow-app-seeds.s3-us-west-1.amazonaws.com/purple.jpg")
+
+aquaman.photo.attach(io: aquaman_photo, filename: "aquaman.jpg")
+mqofs.photo.attach(io: mqofs_photo, filename: "mqofs.jpg")
+test.photo.attach(io: test_photo, filename: "test.jpg")
 purple.photo.attach(io: purple_photo, filename: "purple.jpg")
