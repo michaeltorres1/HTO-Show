@@ -614,8 +614,6 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "home-content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "left"
@@ -633,14 +631,15 @@ function (_React$Component) {
         className: "nav-title"
       }, "HTO SHOW")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "right"
-      }, signup, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         onClick: function onClick() {
           return _this.props.openModal('login');
         },
         className: "nav-item nav-signin"
-      }, username))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, username), signup)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav-divider"
-      })));
+      })) // </div>
+      ;
     }
   }]);
 
@@ -1025,7 +1024,9 @@ function (_React$Component) {
   _createClass(Example, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "what"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "mySidenav",
         className: "sidenav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -1043,7 +1044,7 @@ function (_React$Component) {
         id: "collections"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "collections-text"
-      }, "collections")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, "favs")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "#",
         id: "profile"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -33252,7 +33253,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

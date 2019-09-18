@@ -4,7 +4,7 @@ class Example extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="what">
         <div id="mySidenav" className="sidenav">
           <a href="http://localhost:3000/#/movies" id="home">
           <div className="home-text">home</div>
@@ -14,7 +14,7 @@ class Example extends React.Component {
           </a>
           <div></div>
           <a href="#" id="collections">
-            <div className="collections-text">collections</div>
+            <div className="collections-text">favs</div>
           </a>
           <div></div>
           <a href="#" id="profile">

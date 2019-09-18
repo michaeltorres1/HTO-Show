@@ -1,0 +1,68 @@
+#mySidenav a {
+  position: fixed;
+  margin-top: 70px;
+  left: -105px;
+  transition: 0.3s;
+  padding: 17px;
+  width: 100px;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 0 5px 5px 0;
+  background: white;
+  opacity: .2;
+}
+
+#mySidenav a:hover {
+  left: 0;
+  background: black;
+  color: white;
+  opacity: 2;
+}
+
+#home {
+  display: flex;
+  top: 20px;
+}
+
+.home-text {
+  margin-left: 80%;
+  transform: rotate(-90deg);
+}
+
+#mySidenav a:hover > div {
+  margin-left: 20%;
+  transform: rotate(0deg);
+}
+
+#movies-tab {
+  display: flex;
+  top: 80px;
+  background-color: lightcoral;
+}
+
+.movie-text {
+  margin-left: 80%;
+  transform: rotate(-90deg);
+}
+
+#collections {
+  display: flex;
+  top: 140px;
+  background-color: darkorange;
+}
+
+.collections-text {
+  margin-left: 90%;
+  transform: rotate(-90deg);
+}
+
+#profile {
+  display: flex;
+  top: 200px;
+  background-color: wheat;
+}
+
+.profile-text {
+  margin-left: 80%;
+  transform: rotate(-90deg);
+}
