@@ -4,7 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 import { login, logout } from './actions/session_actions';
 import { fetchMovies } from './actions/movie_actions';
-import MoviesReducer from './reducers/movies_reducer';
+// import MoviesReducer from './reducers/movies_reducer';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;

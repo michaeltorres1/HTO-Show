@@ -39,7 +39,7 @@
   margin-right: 200px;
   margin-left: 330px;
   margin-top: 1%;
-  font-size: 40px;
+  font-size: 2.9vw;
 }
 
 .nav-title {
@@ -54,7 +54,7 @@
 }
 
 .nav-search {
-  font-size: 18px;
+  font-size: 1.5vw;
 }
 
 .search-input-nav {
@@ -69,13 +69,13 @@
 }
 
 .nav-signin {
-  font-size: 18px;
+  font-size: 1.5vw;
   float: left;
   cursor: pointer;
 }
 
 .nav-signup {
-  font-size: 18px;
+  font-size: 1.5vw;
   float: right;
   cursor: pointer;
 }
@@ -84,11 +84,7 @@
   font-weight: bold;
   margin-right: 4px;
   vertical-align: bottom;
-  font-size: 20px;
-}
-
-.nav-icon-browse {
-  font-size: 23px;
+  font-size: 1.5vw;
 }
 
 .login-form-container {
@@ -96,7 +92,7 @@
   height: 400px;
   width: 300px;
   border: solid none;
-  border-radius: 20px;
+  border-radius: 20vw;
 }
 
 .modal-input {
@@ -119,7 +115,7 @@
 }
 
 ::-webkit-input-placeholder {
-  font-size: 16px;
+  font-size: 1.2vw;
   color: rgb(39, 37, 37);
   margin-left: 50%;
   opacity: 1;
@@ -135,7 +131,7 @@ label {
   background-color: white;
   color: black;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 1.2vw;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
@@ -150,7 +146,7 @@ label {
   align-content: center;
   color: black;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 1.2vw;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
@@ -277,13 +273,13 @@ li {
   position: absolute;
   top: 20px;
   right: 45px;
-  font-size: 60px;
+  font-size: 1vw;
 }
 
 @media screen and (max-height: 450px) {
   .overlay a {font-size: 20px}
   .overlay .closebtn {
-  font-size: 40px;
+  font-size: 40vw;
   top: 15px;
   right: 35px;
   }

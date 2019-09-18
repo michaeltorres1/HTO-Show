@@ -34,3 +34,7 @@ aquaman.photo.attach(io: aquaman_photo, filename: "aquaman.jpg")
 mqofs.photo.attach(io: mqofs_photo, filename: "mqofs.jpg")
 test.photo.attach(io: test_photo, filename: "test.jpg")
 purple.photo.attach(io: purple_photo, filename: "purple.jpg")
+
+aquaman_video = open("https://htoshow-app-seeds.s3-us-west-1.amazonaws.com/aquaman.mp4")
+
+aquaman.video.attach(io: aquaman_video, filename: "aquaman.mp4")

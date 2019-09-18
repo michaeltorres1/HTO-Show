@@ -1,0 +1,38 @@
+.movie-show-img-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 11px; 
+  margin-left: 40px;
+}
+
+.movie-show-img {
+  height: 100%;
+  width: 70%;
+  image-rendering: pixelated;
+}
+
+.movie-show-content {
+  margin-left: 20px;
+  color: rgb(163, 162, 162);
+}
+
+.movie-show-title {
+  font-size: 60px;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.movie-show-rating {
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.movie-show-description {
+  margin-top: 40px;
+}
+
+.movie-show-release-date {
+  color: rgb(163, 162, 162);
+  font-size: 12px;
+  margin-top: 40px;
+}

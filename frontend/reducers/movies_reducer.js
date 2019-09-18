@@ -8,7 +8,7 @@ const MoviesReducer = (oldState = {}, action) => {
     case RECEIVE_ALL_MOVIES:
       return Object.assign({}, oldState, action.movies);
     case RECEIVE_MOVIE:
-      newState = Object.assign({}, oldstate, { [action.movie.id]: action.movie });
+      newState = Object.assign({}, oldState, { [action.movie.id]: action.movie });
       return newState;
     default:
       return oldState;
