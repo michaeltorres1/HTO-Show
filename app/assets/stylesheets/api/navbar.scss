@@ -40,13 +40,18 @@
   text-decoration: none;
 }
 
-.nav-browse {
-  padding-right: 20px;
+.nav-search {
   font-size: 18px;
 }
 
-.nav-search {
-  font-size: 18px;
+.search-input-nav {
+  outline: 0;
+  background: black;
+  color: white;
+  width: 80%;
+  height: 25px;
+  border-radius: 10px;
+  opacity: .6;
 }
 
 .nav-signin {

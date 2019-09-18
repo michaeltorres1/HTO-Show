@@ -1,15 +1,23 @@
 import React from 'react';
 // import Home from '../home_component/home';
-import Sidebar from "react-sidebar";
-
+// import Sidebar from "../sidebar";
+import { slide as Menu } from 'react-burger-menu'
 
 // TODO MAKE A SIDEBAR OR COLLAPSIBLE MENU
 class Nav extends React.Component {
 
   constructor (props) {
     super (props);
-    this.state = this.props.currentUser;
+    
+    // this.state = this.props.currentUser;
+    // this.state = { sidebarOpen: false,
+    //  };
+    // this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
   }
+
+  // onSetSidebarOpen(open) {
+  //   this.setState({ sidebarOpen: open });
+  // }
 
   render() {
     let user = this.props.currentUser;
@@ -27,13 +35,14 @@ class Nav extends React.Component {
       <div className="home-content">
         <div className="nav">
           <div className="left">
-            <a className="nav-item nav-browse">
+            {/* <a className="nav-item nav-browse">
               <i className="material-icons nav-icon nav-icon-browse">menu</i>
               BROWSE
-            </a>
+            </a> */}
             <a href="#" className="nav-item nav-search">
               <i className="material-icons nav-icon">search</i>
-              SEARCH
+              {/* <input className="search-input-nav" type="submit" value="SEARCH"/> */}
+              <input className="search-input-nav" type="search"/>
             </a>
           </div>
           <div className="middle">

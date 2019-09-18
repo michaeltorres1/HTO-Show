@@ -6,7 +6,8 @@ import Nav from './nav';
 
 const mapStateToProps = ({ session, entities: { users } }) => {
   return({
-    currentUser: users[session.id]
+    currentUser: users[session.id],
+    sidebarOpen: true,
   })
 };
 
