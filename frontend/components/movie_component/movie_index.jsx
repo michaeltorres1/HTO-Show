@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 class MovieIndex extends React.Component {
   
@@ -14,7 +14,9 @@ class MovieIndex extends React.Component {
       return (
         <li key={movie.id}>
           <div className="movie-img-container">
-            <img src={movie.photoUrl} alt="" className="movie-img"/>
+            <Link to={`/movies/${movie.id}`}>
+              <img src={movie.photoUrl} alt="" className="movie-img"/>
+            </Link>
             <div className="movie-title">{movie.title}</div>
           </div>
         </li>

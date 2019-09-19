@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Example extends React.Component {
 
@@ -6,20 +7,18 @@ class Example extends React.Component {
     return (
       <div className="what">
         <div id="mySidenav" className="sidenav">
-          <a href="http://localhost:3000/#/movies" id="home">
-          <div className="home-text">home</div>
-          </a>
-          <a href="http://localhost:3000/#/" id="movies-tab">
-            <div className="movie-text">movie</div>
-          </a>
-          <div></div>
-          <a href="#" id="collections">
+          <Link to="/" id="home">
+            <div className="home-text">home</div>
+          </Link>
+          <Link to="/movies" id="movies-tab">
+            <div className="movie-text">movies</div>
+          </Link>
+          <Link to="/" id="collections">
             <div className="collections-text">favs</div>
-          </a>
-          <div></div>
-          <a href="#" id="profile">
+          </Link>
+          <Link to="/" id="profile">
             <div className="profile-text">profile</div>
-          </a>
+          </Link>
         </div>
       </div>
     );
