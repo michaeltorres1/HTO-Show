@@ -10,10 +10,10 @@ require 'open-uri'
 
 Movie.destroy_all
 
-Movie.create!(title: "Aquaman", release_date: "9-12-2018", rating: "5", description: "A water hero movie", director_id: 1, producer_id: 2, writer_id: 3, date_added: "9-10-2019")
-Movie.create!(title: "mqofs", release_date: "9-11-2017", rating: "4", description: "A red head movie", director_id: 3, producer_id: 1, writer_id: 2, date_added: "9-11-2018")
-Movie.create!(title: "Test", release_date: "10-11-2016", rating: "3", description: "A test movie", director_id: 1, producer_id: 2, writer_id: 3, date_added: "10-12-2018")
-Movie.create!(title: "Purple", release_date: "10-11-2016", rating: "5", description: "A purple movie", director_id: 4, producer_id: 5, writer_id: 6, date_added: "10-12-2018")
+Movie.create!(title: "Aquaman", release_date: "9-12-2018", rating: "5", description: "A water hero movie", director_id: 1, producer_id: 2, writer_id: 3)
+Movie.create!(title: "mqofs", release_date: "9-11-2017", rating: "4", description: "A red head movie", director_id: 3, producer_id: 1, writer_id: 2)
+Movie.create!(title: "Test", release_date: "10-11-2016", rating: "3", description: "A test movie", director_id: 1, producer_id: 2, writer_id: 3)
+Movie.create!(title: "Purple", release_date: "10-11-2016", rating: "5", description: "A purple movie", director_id: 4, producer_id: 5, writer_id: 6)
 
 aquaman = Movie.find_by(title: "Aquaman")
 mqofs = Movie.find_by(title: "mqofs")

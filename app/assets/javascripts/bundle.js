@@ -611,6 +611,7 @@ function (_React$Component) {
         className: "movie-show-img-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
         controls: true,
+        poster: movie.photoUrl,
         width: "80%",
         height: "60%"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {

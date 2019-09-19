@@ -23,10 +23,9 @@ class MovieShow extends React.Component {
     return (
       <div className="movie-show-container">
         <div className="movie-show-img-container">
-          <video controls width="80%" height="60%">
+          <video controls poster={movie.photoUrl} width="80%" height="60%">
             <source src={movie.videoUrl} type="video/mp4"/>
           </video>
-          {/* <img src={movie.photoUrl} alt="" className="movie-show-img" /> */}
           <div className="movie-show-content">
             <h1 className="movie-show-title">{movie.title}</h1>
             <p className="movie-show-rating">RATING | {movie.rating}</p>
