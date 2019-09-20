@@ -15,7 +15,7 @@ class SessionForm extends React.Component {
   update(field) {
     let myEvent = (e) => {
       if (e.currentTarget.value === 'DEMO') {
-        this.setState({ [field]: 'demoUser', 'password': 'password' });
+        this.setState({ [field]: 'demo', 'password': 'password' });
       } else {
         this.setState({ [field]: e.currentTarget.value });
       }

@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class Example extends React.Component {
+class Sidebar extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     return (
@@ -13,16 +17,18 @@ class Example extends React.Component {
           <Link to="/movies" id="movies-tab">
             <div className="movie-text">movies</div>
           </Link>
-          <Link to="/" id="collections">
+          <Link to={`/users/2/favorites`} id="collections">
             <div className="collections-text">favs</div>
           </Link>
           <Link to="/" id="profile">
             <div className="profile-text">profile</div>
           </Link>
+
+          {/* <Link to={`/posts/${movie.id}`}>{movie.title}</Link> */}
         </div>
       </div>
     );
   }
 }
 
-export default Example;
+export default Sidebar;

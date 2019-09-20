@@ -1,0 +1,1 @@
+# json.partial! "api/actor", actor: @actor

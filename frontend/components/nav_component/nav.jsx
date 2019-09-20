@@ -39,11 +39,12 @@ class Nav extends React.Component {
         //       <i className="material-icons nav-icon nav-icon-browse">menu</i>
         //       BROWSE
         //     </a> */}
-               <a href="#" className="nav-item nav-search">
-                 <i className="material-icons nav-icon">search</i>
+
+               {/* <a href="#" className="nav-item nav-search"> */}
+                 {/* <i className="material-icons nav-icon">search</i> */}
                  {/* <input className="search-input-nav" type="submit" value="SEARCH"/> */}
-                 <input className="search-input-nav" type="search"/>
-               </a>
+                 {/* <input className="search-input-nav" type="search"/> */}
+               {/* </a> */}
              </div>
               <div className="middle">
                 <h1 className="nav-title">HTO SHOW</h1>
