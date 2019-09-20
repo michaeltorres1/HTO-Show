@@ -797,10 +797,6 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading...");
       }
 
-      var year = movie.release_date.split("-")[0]; // <video width and height>
-      //   <source type="video/mp4" src="mov_bbb.mp4">
-      // </video>
-
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "movie-show-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -821,9 +817,7 @@ function (_React$Component) {
         className: "movie-show-rating"
       }, "RATING | ", movie.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "movie-show-description"
-      }, movie.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "movie-show-release-date"
-      }, year))));
+      }, movie.description))));
     }
   }]);
 

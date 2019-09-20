@@ -14,12 +14,6 @@ class MovieShow extends React.Component {
       return <div>Loading...</div>
     }
 
-    let year = movie.release_date.split("-")[0];
-  
-    // <video width and height>
-    //   <source type="video/mp4" src="mov_bbb.mp4">
-    // </video>
-
     return (
       <div className="movie-show-container">
         <div className="movie-show-img-container">
@@ -30,10 +24,8 @@ class MovieShow extends React.Component {
             <h1 className="movie-show-title">{movie.title}</h1>
             <p className="movie-show-rating">RATING | {movie.rating}</p>
             <p className="movie-show-description">{movie.description}</p>
-            <div className="movie-show-release-date">{year}</div>
           </div>
         </div>
-        {/* <Link to="/">Back to index</Link> */}
       </div>
     )
   }

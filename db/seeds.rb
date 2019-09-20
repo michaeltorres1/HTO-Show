@@ -7,8 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'open-uri'
-
+User.destroy_all
 Movie.destroy_all
+
+User.create!(username: "demo", password: "password")
 
 Movie.create!(title: "Aquaman", release_date: "9-12-2018", rating: "5", description: "A water hero movie", director_id: 1, producer_id: 2, writer_id: 3)
 Movie.create!(title: "mqofs", release_date: "9-11-2017", rating: "4", description: "A red head movie", director_id: 3, producer_id: 1, writer_id: 2)
@@ -38,3 +40,15 @@ purple.photo.attach(io: purple_photo, filename: "purple.jpg")
 aquaman_video = open("https://htoshow-app-seeds.s3-us-west-1.amazonaws.com/aquaman.mp4")
 
 aquaman.video.attach(io: aquaman_video, filename: "aquaman.mp4")
+
+demo_user_id = User.find_by(username: "demo").id
+
+demo_aqua_id = Movie.find_by(title: "Aquaman").id
+demo_purple_id = Movie.find_by(title: "Purple").id
+demo_mqofs_id = Movie.find_by(title: "mqofs").id
+demo_test_id = Movie.find_by(title: "Test").id
+
+Favorite.create!(user_id: demo_user_id, movie_id: demo_aqua_id)
+Favorite.create!(user_id: demo_user_id, movie_id: demo_purple_id)
+Favorite.create!(user_id: demo_user_id, movie_id: demo_mqofs_id)
+Favorite.create!(user_id: demo_user_id, movie_id: demo_test_id)
