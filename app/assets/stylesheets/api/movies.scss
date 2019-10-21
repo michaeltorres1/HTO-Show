@@ -1,20 +1,14 @@
-.movie-container {
-  width: 100%;
-  margin-top: 20px;
+.movie-img-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .movie-list {
-  margin: 0;
-  margin-left: 100px;
-  padding: 0;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.movie-img {
-  max-width: 374px;
-  max-height: 210px;
+  justify-content: center;
+  margin-top: 4vh;
+  margin-left: 3vw;
+  flex-wrap: wrap;
 }
 
 .movie-img-container {
