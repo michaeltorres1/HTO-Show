@@ -9,7 +9,7 @@ class MovieShow extends React.Component {
 
   render () {
     const { movie } = this.props;
-
+    
     if (!movie) {
       return <div>Loading...</div>
     }
@@ -17,13 +17,14 @@ class MovieShow extends React.Component {
     return (
       <div className="movie-show-container">
         <div className="movie-show-img-container">
-          <video controls poster={window.aqua} width="80%" height="60%">
+          <video controls poster={movie.photoUrl} width="80%" height="60%">
             <source src={movie.videoUrl} type="video/mp4"/>
           </video>
           <div className="movie-show-content">
             <h1 className="movie-show-title">{movie.title}</h1>
             <p className="movie-show-rating">RATING | {movie.rating}</p>
             <p className="movie-show-description">{movie.description}</p>
+            <button class="add-to-favorites">Add to Favorites</button>
           </div>
         </div>
       </div>

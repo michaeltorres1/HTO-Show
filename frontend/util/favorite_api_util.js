@@ -12,10 +12,3 @@ export const fetchFavorites = user_id => (
     url: `api/users/${user_id}/favorites`,
   })
 );
-
-// export const fetchFavorite = id => (
-//   $.ajax({
-//     method: 'GET',
-//     url: `api/favorites/${id}`,
-//   })
-// );

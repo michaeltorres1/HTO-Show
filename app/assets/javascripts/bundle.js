@@ -798,7 +798,7 @@ function (_React$Component) {
         className: "movie-show-img-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
         controls: true,
-        poster: window.aqua,
+        poster: movie.photoUrl,
         width: "80%",
         height: "60%"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
@@ -812,7 +812,9 @@ function (_React$Component) {
         className: "movie-show-rating"
       }, "RATING | ", movie.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "movie-show-description"
-      }, movie.description))));
+      }, movie.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        "class": "add-to-favorites"
+      }, "Add to Favorites"))));
     }
   }]);
 
@@ -1813,12 +1815,7 @@ var fetchFavorites = function fetchFavorites(user_id) {
     method: 'GET',
     url: "api/users/".concat(user_id, "/favorites")
   });
-}; // export const fetchFavorite = id => (
-//   $.ajax({
-//     method: 'GET',
-//     url: `api/favorites/${id}`,
-//   })
-// );
+};
 
 /***/ }),
 
@@ -33671,7 +33668,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
