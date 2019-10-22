@@ -9,7 +9,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 4vh;
-  margin-left: 3vw;
 }
 
 .movie-img-container {
@@ -20,16 +19,21 @@
 
 .movie-img-container:hover {
   transform: scale(1.2);
+  
+  .movie-title {
+    color: rgb(55, 144, 179);
+  }
 }
 
 .movie-img {
   width: 21vw;
-  margin-right: 1vw;
+  margin-right: 1.5vw;
 }
 
 .movie-title {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  font-size: 2rem;
   color: white;
 }

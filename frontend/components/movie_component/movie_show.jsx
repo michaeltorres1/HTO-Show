@@ -17,7 +17,7 @@ class MovieShow extends React.Component {
     return (
       <div className="movie-show-container">
         <div className="movie-show-img-container">
-          <video controls poster={movie.photoUrl} width="80%" height="60%">
+          <video controls poster={window.aqua} width="80%" height="60%">
             <source src={movie.videoUrl} type="video/mp4"/>
           </video>
           <div className="movie-show-content">

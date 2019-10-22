@@ -798,7 +798,7 @@ function (_React$Component) {
         className: "movie-show-img-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
         controls: true,
-        poster: movie.photoUrl,
+        poster: window.aqua,
         width: "80%",
         height: "60%"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
@@ -33671,7 +33671,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

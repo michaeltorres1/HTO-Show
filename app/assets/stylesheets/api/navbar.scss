@@ -43,6 +43,10 @@
   float: right;
 }
 
+.nav-signin:hover, .nav-signup:hover, .nav-title:hover {
+  color: rgb(55, 144, 179);
+}
+
 .nav:hover {
   background-color: black;
   opacity: 100;
