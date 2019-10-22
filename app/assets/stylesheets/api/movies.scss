@@ -3,12 +3,17 @@
   margin-right: 2.1vw;
 }
 
-.movie-list {
+.movie-list, .movie-list-error {
   display: flex;
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 4vh;
+}
+
+.movie-list-error {
+  font-size: 4vw;
+  color: #0099CC;
 }
 
 .movie-img-container {

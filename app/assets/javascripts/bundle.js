@@ -390,6 +390,14 @@ function (_React$Component) {
         return null;
       }
 
+      if (!this.props.user_id) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "movie-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "movie-list-error"
+        }, "must be signed in to see favorites"));
+      }
+
       var favorites = this.props.movies.map(function (favorite) {
         console.log(_this.props);
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {

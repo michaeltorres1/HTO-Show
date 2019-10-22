@@ -18,6 +18,10 @@
   opacity: 2;
 }
 
+#mySidenav a:focus {
+  outline: none;
+}
+
 #home {
   display: flex;
   top: 20px;

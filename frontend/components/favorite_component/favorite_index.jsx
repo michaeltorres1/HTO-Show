@@ -11,6 +11,16 @@ class FavoriteIndex extends React.Component {
       return null;
     }
 
+    if (!this.props.user_id) {
+      return (
+        <div className="movie-container">
+          <div className="movie-list-error">
+            must be signed in to see favorites
+          </div>
+        </div>
+      )
+    }
+
     let favorites = this.props.movies.map(favorite => {
       console.log(this.props);
       return (
