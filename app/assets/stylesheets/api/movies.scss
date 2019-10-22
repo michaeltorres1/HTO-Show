@@ -22,11 +22,14 @@
   
   .movie-title {
     color: rgb(55, 144, 179);
+    cursor: pointer;
   }
 }
 
 .movie-img {
-  width: 21vw;
+  // width: 21vw;
+  max-width: 300px;
+  // min-width: 10px;
   margin-right: 1.5vw;
 }
 
@@ -34,6 +37,6 @@
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  font-size: 2rem;
+  font-size: 2vw;
   color: white;
 }

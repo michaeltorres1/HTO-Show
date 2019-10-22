@@ -18,15 +18,16 @@
 }
 
 .movie-show-title {
-  font-size: 60px;
+  font-size: 4vw;
 }
 
 .movie-show-rating {
-  font-size: 12px;
+  font-size: 1vw;
   margin-top: 20px;
 }
 
 .movie-show-description {
+  font-size: 2vw;
   margin-top: 40px;
 }
 
@@ -34,4 +35,20 @@
   color: rgb(163, 162, 162);
   font-size: 12px;
   margin-top: 40px;
+}
+
+.add-to-favorites {
+  font-family: 'Squada One', cursive;
+  font-size: 2vw;
+  color: white;
+  background: #4285F4;
+  border: black;
+  border-radius: 6px;
+  margin-top: 5vh;
+}
+
+@media screen and (max-width: 600px) {
+  .movie-show-img-container {
+    flex-direction: column;
+  }
 }

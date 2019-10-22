@@ -28,7 +28,7 @@ class MovieShow extends React.Component {
             <h1 className="movie-show-title">{movie.title}</h1>
             <p className="movie-show-rating">RATING | {movie.rating}</p>
             <p className="movie-show-description">{movie.description}</p>
-            <button className="add-to-favorites" onClick={() => this.handleFavorite(`${movie.id}`)}>Add to Favorites</button>
+            <button className="add-to-favorites" onClick={() => this.handleFavorite(`${movie.id}`)}>ADD TO COLLECTION</button>
           </div>
         </div>
       </div>
