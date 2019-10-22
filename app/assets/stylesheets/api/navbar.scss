@@ -23,9 +23,14 @@
   font-size: 2.9vw;
 }
 
-.nav-title {
+.nav-title > a {
   color: white;
+  text-decoration: none;
   cursor: pointer;
+}
+
+.nav-title > a:focus {
+  outline: none;
 }
 
 .nav-item {

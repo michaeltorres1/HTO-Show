@@ -23,7 +23,9 @@ class Nav extends React.Component {
         <div className="nav">
           <div className="left"></div>
           <div className="middle">
-            <h1 className="nav-title">HTO SHOW</h1>
+            <h1 className="nav-title">
+              <a href="#">HTO SHOW</a>
+            </h1>
           </div>
           <div className="right">
             <div onClick={() => this.props.openModal('login')} className="nav-item nav-signin">{username}</div>
