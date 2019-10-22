@@ -5,8 +5,15 @@ class Api::FavoritesController < ApplicationController
   end
 
   def create
-    @favorite = Favorite.new
+    # debugger
+    @favorite = Favorite.new(movie_id: favorite_params[:movie_id])
     @favorite.user_id = current_user.id
+
+    if @favorite.save
+      # render 
+    else
+      render json: @favorite.errors.full_messages, status: 401
+    end
   end
 
   private

@@ -127,9 +127,7 @@ var fetchFavorites = function fetchFavorites(user_id) {
 };
 var createFavorite = function createFavorite(data) {
   return function (dispatch) {
-    return _util_favorite_api_util__WEBPACK_IMPORTED_MODULE_0__["createFavorite"](data).then(function (favorite) {
-      return dispatch(receiveFavorite(favorite));
-    });
+    return _util_favorite_api_util__WEBPACK_IMPORTED_MODULE_0__["createFavorite"](data);
   };
 };
 
@@ -784,8 +782,15 @@ function (_React$Component) {
       this.props.fetchMovie(this.props.match.params.movieId);
     }
   }, {
+    key: "handleFavorite",
+    value: function handleFavorite(id) {
+      this.props.createFavorite(id);
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this = this;
+
       var movie = this.props.movie;
 
       if (!movie) {
@@ -813,7 +818,10 @@ function (_React$Component) {
       }, "RATING | ", movie.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "movie-show-description"
       }, movie.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        "class": "add-to-favorites"
+        className: "add-to-favorites",
+        onClick: function onClick() {
+          return _this.handleFavorite("".concat(movie.id));
+        }
       }, "Add to Favorites"))));
     }
   }]);
@@ -837,6 +845,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _movie_show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./movie_show */ "./frontend/components/movie_component/movie_show.jsx");
 /* harmony import */ var _actions_movie_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/movie_actions */ "./frontend/actions/movie_actions.js");
+/* harmony import */ var _actions_favorite_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/favorite_actions */ "./frontend/actions/favorite_actions.js");
+
 
 
 
@@ -852,6 +862,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchMovie: function fetchMovie(id) {
       return dispatch(Object(_actions_movie_actions__WEBPACK_IMPORTED_MODULE_2__["fetchMovie"])(id));
+    },
+    createFavorite: function createFavorite(data) {
+      return dispatch(Object(_actions_favorite_actions__WEBPACK_IMPORTED_MODULE_3__["createFavorite"])(data));
     }
   };
 };
@@ -1806,7 +1819,9 @@ var createFavorite = function createFavorite(data) {
     method: 'POST',
     url: 'api/favorites',
     data: {
-      data: data
+      favorite: {
+        movie_id: data
+      }
     }
   });
 };
@@ -33668,7 +33683,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

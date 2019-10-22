@@ -2,7 +2,7 @@ export const createFavorite = (data) => (
   $.ajax({
     method: 'POST',
     url: 'api/favorites',
-    data: { data },
+    data: { favorite: { movie_id: data } },
   })
 );
 
