@@ -5,7 +5,6 @@ class Api::FavoritesController < ApplicationController
   end
 
   def create
-    # debugger
     @favorite = Favorite.new(movie_id: favorite_params[:movie_id])
     @favorite.user_id = current_user.id
 
