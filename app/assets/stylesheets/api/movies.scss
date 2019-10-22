@@ -1,22 +1,30 @@
-.movie-img-container {
-  display: flex;
-  flex-direction: column;
+.movie-container {
+  margin-left: 2.1vw;
+  margin-right: 2.1vw;
 }
 
 .movie-list {
   display: flex;
   justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin-top: 4vh;
   margin-left: 3vw;
-  flex-wrap: wrap;
 }
 
 .movie-img-container {
-  transition: transform .2s; /* Animation */
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s;
 }
 
 .movie-img-container:hover {
   transform: scale(1.2);
+}
+
+.movie-img {
+  width: 21vw;
+  margin-right: 1vw;
 }
 
 .movie-title {

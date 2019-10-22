@@ -12,16 +12,16 @@ class Sidebar extends React.Component {
       <div className="what">
         <div id="mySidenav" className="sidenav">
           <Link to="/" id="home">
-            <div className="home-text">home</div>
+            <div className="home-text">HOME</div>
           </Link>
           <Link to="/movies" id="movies-tab">
-            <div className="movie-text">movies</div>
+            <div className="movie-text">MOVIES</div>
           </Link>
           <Link to={`/users/2/favorites`} id="collections">
-            <div className="collections-text">favs</div>
+            <div className="collections-text">FAVS</div>
           </Link>
           <Link to="/" id="profile">
-            <div className="profile-text">profile</div>
+            <div className="profile-text">PROFILE</div>
           </Link>
 
           {/* <Link to={`/posts/${movie.id}`}>{movie.title}</Link> */}

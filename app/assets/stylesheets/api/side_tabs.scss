@@ -3,13 +3,12 @@
   margin-top: 70px;
   left: -105px;
   transition: 0.3s;
-  padding: 17px;
+  padding: 26px;
   width: 100px;
   text-decoration: none;
   font-size: 20px;
   border-radius: 0 5px 5px 0;
-  background: white;
-  opacity: .2;
+  color: white;
 }
 
 #mySidenav a:hover {
@@ -37,32 +36,29 @@
 #movies-tab {
   display: flex;
   top: 80px;
-  background-color: lightcoral;
 }
 
 .movie-text {
-  margin-left: 80%;
+  margin-left: 75%;
   transform: rotate(-90deg);
 }
 
 #collections {
   display: flex;
   top: 140px;
-  background-color: darkorange;
 }
 
 .collections-text {
-  margin-left: 90%;
+  margin-left: 85%;
   transform: rotate(-90deg);
 }
 
 #profile {
   display: flex;
   top: 200px;
-  background-color: wheat;
 }
 
 .profile-text {
-  margin-left: 80%;
+  margin-left: 75%;
   transform: rotate(-90deg);
 }

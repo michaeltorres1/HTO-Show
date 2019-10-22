@@ -17,6 +17,7 @@
  /* -------------------- BODY BACKGROUND -------------------- */
 
 html, body {
+  font-family: 'Squada One', cursive;
   background: #080808;
   overflow-x: hidden;
 }
