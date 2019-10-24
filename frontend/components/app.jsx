@@ -8,6 +8,7 @@ import FavoriteIndexContainer from './favorite_component/favorite_index_containe
 import SideBarContainer from './sidebar_component/sidebar_container';
 import Home from '../components/home_component/home';
 import Sidebar from '../components/sidebar_component/sidebar';
+import ProfileShowContainer from './profile_component/profile_show_container';
 
 const App = () => (
   <div>
@@ -20,6 +21,7 @@ const App = () => (
       <Route exact path="/movies" component={MovieIndexContainer} />
       <Route exact path="/movies/:movieId" component={MovieShowContainer} />
       <Route exact path="/users/:user_id/favorites" component={FavoriteIndexContainer} />
+      <Route exact path="/users/:user_id/profile" component={ProfileShowContainer} />
       <Route exact path="/" component={Home} />
     </Switch>
   </div>

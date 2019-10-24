@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     # resources :actors, only: [:show]
     resource :user, only: [:create] 
     resources :favorites, only: [:create]
+    resources :profile, only: [:show]
 
     resources :users, only: [:show] do
       resources :favorites, only: [:index]

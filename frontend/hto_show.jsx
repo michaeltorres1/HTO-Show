@@ -4,6 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 import { login, logout } from './actions/session_actions';
 import { fetchMovies } from './actions/movie_actions';
+import { fetchUser } from './actions/profile_actions';
 // import MoviesReducer from './reducers/movies_reducer';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.login = login;
   window.logout = logout;
   window.fetchMovies = fetchMovies;
+  window.fetchUser = fetchUser;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   
