@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class FavoriteIndex extends React.Component {
   componentDidMount () {
@@ -19,6 +19,14 @@ class FavoriteIndex extends React.Component {
           </div>
         </div>
       )
+    } else if (this.props.movies.length === 0) {
+      return (
+        <div className="movie-container">
+          <div className="movie-list-error">
+            No favorites have been added yet!
+          </div>
+        </div>
+      )
     }
 
     let favorites = this.props.movies.map(favorite => {
@@ -26,7 +34,9 @@ class FavoriteIndex extends React.Component {
       return (
         <li key={favorite.id}>
           <div className="movie-img-container">
-            <img src={favorite.photoUrl} alt="" className="movie-img"/>
+            <Link to={`/movies/${favorite.id}`}>
+              <img src={favorite.photoUrl} alt="" className="movie-img"/>
+            </Link>
             <div className="movie-title">{favorite.title}</div>
           </div>
         </li>

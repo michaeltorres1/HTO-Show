@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class MovieShow extends React.Component {
 
   componentDidMount () {
-    this.props.fetchMovie(this.props.match.params.movieId);
+    this.props.fetchMovie(this.props.match.params.movieId);    
   }
 
   handleFavorite(id) {
@@ -18,6 +18,7 @@ class MovieShow extends React.Component {
       return <div>Loading...</div>
     }
 
+    debugger
     return (
       <div className="movie-show-container">
         <div className="movie-show-img-container">
