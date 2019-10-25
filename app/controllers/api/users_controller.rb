@@ -15,10 +15,8 @@ class Api::UsersController < ApplicationController
   end
 
   def destroy
-    debugger
     @user = User.find_by_id(params[:id])
     @user.destroy
-    render 'api/users/delete'
   end
 
   private

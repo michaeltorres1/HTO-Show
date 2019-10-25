@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 class ProfileShow extends React.Component {
   constructor(props){
@@ -20,10 +21,10 @@ class ProfileShow extends React.Component {
   }
 
   handleSubmit(event) {
-    debugger
     event.preventDefault();
-    // alert(this.state.username);
     this.props.removeUser(this.props.match.params.user_id);
+    this.props.logout();
+    this.props.history.push('/#');
   }
 
   render () {
