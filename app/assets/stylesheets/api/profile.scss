@@ -1,0 +1,39 @@
+.profile-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 2vw;
+  width: 40vw;
+  padding: 2vh;
+  font-size: 10vw;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 14vh;
+  background-color: #4B515D;
+  color: black;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.update-username-btn {
+  margin-right: 1vw;
+}
+
+.profile-name {
+  color: #4285F4;
+}
+
+.profile-btn {
+  font-size: 1vw;
+  height: 10vh;
+}
+
+.input-username {
+  width: 12vw;
+  height: 6vh;
+  margin-right: 1vw;
+}

@@ -8,7 +8,6 @@ class MovieIndex extends React.Component {
   }
 
   render () {
-
     console.log(this.props.movies);
     let movies = this.props.movies.map(movie => {
       return (

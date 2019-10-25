@@ -8,7 +8,6 @@ class Sidebar extends React.Component {
   }
 
   render() {
-
     let userId = null;
     
     if (this.props.currentUser) {
@@ -36,10 +35,7 @@ class Sidebar extends React.Component {
           <Link to="/movies" id="movies-tab">
             <div className="movie-text">MOVIES</div>
           </Link>
-
           {userId ? profile : null}
-
-          {/* <Link to={`/posts/${movie.id}`}>{movie.title}</Link> */}
         </div>
       </div>
     );

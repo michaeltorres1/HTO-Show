@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :movies, only: [:index, :show]
     # resources :actors, only: [:show]
-    resource :user, only: [:create] 
+    resource :user, only: [:create]
+    resources :users, only: [:destroy]
     resources :favorites, only: [:create]
     resources :profile, only: [:show]
 

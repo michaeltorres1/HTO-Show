@@ -14,6 +14,13 @@ class Api::UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
   end
 
+  def destroy
+    debugger
+    @user = User.find_by_id(params[:id])
+    @user.destroy
+    render 'api/users/delete'
+  end
+
   private
 
   def user_params

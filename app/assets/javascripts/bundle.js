@@ -215,16 +215,19 @@ var fetchMovie = function fetchMovie(id) {
 /*!*********************************************!*\
   !*** ./frontend/actions/profile_actions.js ***!
   \*********************************************/
-/*! exports provided: RECEIVE_USER, fetchUser */
+/*! exports provided: RECEIVE_USER, DELETE_USER, fetchUser, removeUser */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_USER", function() { return RECEIVE_USER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELETE_USER", function() { return DELETE_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUser", function() { return fetchUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeUser", function() { return removeUser; });
 /* harmony import */ var _util_profile_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/profile_api_util */ "./frontend/util/profile_api_util.js");
 
 var RECEIVE_USER = 'RECEIVE_USER';
+var DELETE_USER = 'DELETE_USER';
 
 var receiveUser = function receiveUser(user) {
   return {
@@ -233,10 +236,24 @@ var receiveUser = function receiveUser(user) {
   };
 };
 
+var deleteUser = function deleteUser(user) {
+  return {
+    type: DELETE_USER,
+    user: user
+  };
+};
+
 var fetchUser = function fetchUser(id) {
   return function (dispatch) {
     return _util_profile_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchUser"](id).then(function (user) {
       return dispatch(receiveUser(user));
+    });
+  };
+};
+var removeUser = function removeUser(id) {
+  return function (dispatch) {
+    return _util_profile_api_util__WEBPACK_IMPORTED_MODULE_0__["deleteUser"](id).then(function (user) {
+      return dispatch(deleteUser(user));
     });
   };
 };
@@ -1081,9 +1098,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -1097,15 +1114,42 @@ function (_React$Component) {
   _inherits(ProfileShow, _React$Component);
 
   function ProfileShow(props) {
+    var _this;
+
     _classCallCheck(this, ProfileShow);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(ProfileShow).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ProfileShow).call(this, props));
+    _this.state = {
+      username: ''
+    };
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(ProfileShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchUser(this.props.match.params.user_id);
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange() {
+      var _this2 = this;
+
+      return function (e) {
+        _this2.setState({
+          'username': e.target.value
+        });
+      };
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(event) {
+      debugger;
+      event.preventDefault(); // alert(this.state.username);
+
+      this.props.removeUser(this.props.match.params.user_id);
     }
   }, {
     key: "render",
@@ -1116,7 +1160,28 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading...");
       }
 
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, user.id);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, "Hi ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-name"
+      }, user.username)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
+      }, "Username:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "input-username",
+        type: "text",
+        value: this.state.username,
+        onChange: this.handleChange()
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "input-username input-username-btn",
+        type: "submit",
+        value: "Submit"
+      })))));
     }
   }]);
 
@@ -1154,6 +1219,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchUser: function fetchUser(id) {
       return dispatch(Object(_actions_profile_actions__WEBPACK_IMPORTED_MODULE_2__["fetchUser"])(id));
+    },
+    removeUser: function removeUser(id) {
+      return dispatch(Object(_actions_profile_actions__WEBPACK_IMPORTED_MODULE_2__["removeUser"])(id));
     }
   };
 };
@@ -1799,6 +1867,9 @@ var profileReducer = function profileReducer() {
     case _actions_profile_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_USER"]:
       return Object.assign({}, state, _defineProperty({}, action.user.id, action.user));
 
+    case _actions_profile_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_USER"]:
+      return Object.assign({}, state);
+
     default:
       return state;
   }
@@ -2047,15 +2118,22 @@ var fetchMovie = function fetchMovie(id) {
 /*!*******************************************!*\
   !*** ./frontend/util/profile_api_util.js ***!
   \*******************************************/
-/*! exports provided: fetchUser */
+/*! exports provided: fetchUser, deleteUser */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchUser", function() { return fetchUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteUser", function() { return deleteUser; });
 var fetchUser = function fetchUser(id) {
   return $.ajax({
     method: 'GET',
+    url: "api/users/".concat(id)
+  });
+};
+var deleteUser = function deleteUser(id) {
+  return $.ajax({
+    method: 'DELETE',
     url: "api/users/".concat(id)
   });
 };
@@ -31945,7 +32023,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
