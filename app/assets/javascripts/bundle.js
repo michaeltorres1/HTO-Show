@@ -816,7 +816,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -834,7 +833,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
 
 
 
@@ -860,6 +858,16 @@ function (_React$Component) {
       this.props.createFavorite(id);
     }
   }, {
+    key: "playVideo",
+    value: function playVideo() {
+      this.refs.vidRef.play();
+    }
+  }, {
+    key: "pauseVideo",
+    value: function pauseVideo() {
+      this.refs.vidRef.pause();
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this = this;
@@ -870,20 +878,18 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Loading...");
       }
 
-      debugger;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "movie-show-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "movie-show-img-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
+        src: movie.videoUrl,
+        ref: "vidRef",
         controls: true,
         poster: movie.photoUrl,
         width: "80%",
-        height: "60%"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("source", {
-        src: movie.videoUrl,
-        type: "video/mp4"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        height: "80%"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "movie-show-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "movie-show-title"
@@ -892,7 +898,13 @@ function (_React$Component) {
       }, "RATING | ", movie.rating), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "movie-show-description"
       }, movie.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "add-to-favorites",
+        className: "play-btn",
+        onClick: this.playVideo.bind(this)
+      }, "PLAY"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "pause-btn",
+        onClick: this.pauseVideo.bind(this)
+      }, "PAUSE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "collect-btn",
         onClick: function onClick() {
           return _this.handleFavorite("".concat(movie.id));
         }
