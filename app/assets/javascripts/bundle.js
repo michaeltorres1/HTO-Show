@@ -970,6 +970,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -990,6 +991,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Nav =
 /*#__PURE__*/
 function (_React$Component) {
@@ -1007,10 +1009,21 @@ function (_React$Component) {
       var _this = this;
 
       var user = this.props.currentUser;
-      var username = user ? "HI " + user.username.toUpperCase() : "SIGN IN";
+      var username = user ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        style: {
+          outline: 'none'
+        },
+        className: "nav-item nav-sigin",
+        to: "/users/".concat(user.id, "/profile")
+      }, "HI " + user.username.toUpperCase()) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: function onClick() {
+          return _this.props.openModal('login');
+        },
+        className: "nav-item nav-signin"
+      }, "SIGN IN");
       var signup;
 
-      if (username === "SIGN IN") {
+      if (!this.props.currentUser) {
         signup = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "nav-item nav-signup",
           onClick: function onClick() {
@@ -1040,12 +1053,7 @@ function (_React$Component) {
         href: "#"
       }, "HTO SHOW"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "right"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        onClick: function onClick() {
-          return _this.props.openModal('login');
-        },
-        className: "nav-item nav-signin"
-      }, username), signup)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, username, signup)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav-divider"
       }));
     }

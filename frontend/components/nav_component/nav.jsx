@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, Redirect } from 'react-router-dom';
 
 class Nav extends React.Component {
 
@@ -8,10 +9,16 @@ class Nav extends React.Component {
 
   render() {
     let user = this.props.currentUser;
-    let username = user ? "HI " + user.username.toUpperCase() : "SIGN IN";
+    let username = user ?
+      <Link
+        style={{ outline: 'none' }}
+        className="nav-item nav-sigin"
+        to={`/users/${user.id}/profile`}>{"HI " + user.username.toUpperCase()}
+      </Link> :
+      <div onClick={() => this.props.openModal('login')} className="nav-item nav-signin">SIGN IN</div>;
     let signup;
 
-    if (username === "SIGN IN") {
+    if (!this.props.currentUser) {
       signup = <div className="nav-item nav-signup" onClick={() => this.props.openModal('signup')}>SIGN UP</div>
     } else {
       signup = <div className="nav-item nav-signup" onClick={() => this.props.logout()}>LOGOUT</div>
@@ -27,10 +34,10 @@ class Nav extends React.Component {
             </h1>
           </div>
           <div className="right">
-            <div onClick={() => this.props.openModal('login')} className="nav-item nav-signin">{username}</div>
-              {signup}
-            </div>
+            {username}
+            {signup}
           </div>
+        </div>
         <div className="nav-divider"></div>
       </div>
       );
