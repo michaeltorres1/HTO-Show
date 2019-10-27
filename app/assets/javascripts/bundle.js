@@ -1195,24 +1195,19 @@ function (_React$Component) {
         className: "profile-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
-      }, "Hi ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Hi", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-name"
-      }, user.username)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, user.username), "!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
-      }, "Username:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "input-username",
-        type: "text",
-        value: this.state.username,
-        onChange: this.handleChange()
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "input-username input-username-btn",
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "delete-btn",
         type: "submit",
         value: "Submit"
-      })))));
+      }, "DELETE ACCOUNT")))));
     }
   }]);
 
@@ -1454,21 +1449,11 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         onClick: this.props.closeModal,
         className: "close-x"
-      }, "X"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "errors"
-      }, this.renderErrors()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        "class": "fas fa-times-circle fa-4x"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "modal-input"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "login-demo-message"
-      }, "LOGIN AS DEMO USER"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "submit",
-        id: "demo-btn",
-        onClick: this.update('username'),
-        className: "demo-submit",
-        value: "DEMO"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("fieldset", {
-        className: "wrapper-line"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("legend", null, "OR")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "modal-title"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "SIGN IN")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "input-person"
@@ -1484,11 +1469,21 @@ function (_React$Component) {
         onChange: this.update('password'),
         className: "login-input",
         placeholder: "password"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "session-submit",
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "signin-btn",
         type: "submit",
         value: formType
-      }))));
+      }, "SIGN IN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "demo-btn",
+        type: "submit",
+        id: "demo-btn",
+        onClick: this.update('username'),
+        value: "DEMO"
+      }, "LOGIN AS DEMO USER")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "errors"
+      }, this.renderErrors()))));
     }
   }]);
 

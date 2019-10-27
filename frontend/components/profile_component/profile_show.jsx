@@ -37,14 +37,12 @@ class ProfileShow extends React.Component {
     return (
       <div className="profile-form">
         <div className="row">
-          Hi <div className="profile-name">{user.username}</div>
+          Hi<div className="profile-name">{user.username}</div>!
         </div>
         <div className="row">
           <form onSubmit={this.handleSubmit}>
-            Username:
             <div className="row">
-              <input className="input-username" type="text" value={this.state.username} onChange={this.handleChange()} />
-              <input className="input-username input-username-btn" type="submit" value="Submit" />
+              <button className="delete-btn" type="submit" value="Submit">DELETE ACCOUNT</button>
             </div>
           </form>
         </div>

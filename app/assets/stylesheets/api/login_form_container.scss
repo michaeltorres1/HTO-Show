@@ -1,15 +1,15 @@
 .login-form-container {
   display: flex;
-  height: 400px;
-  width: 300px;
-  border: solid none;
-  border-radius: 20vw;
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
 }
 
 .modal-input {
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  width: 80%;
+  width: 80vw;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -18,11 +18,10 @@
 }
 
 .login-input {
-  outline: 0;
-  width: 100%;
-  height: 25px;
-  border-radius: 10px;
-  opacity: .6;
+  padding: 20px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 80vw;
 }
 
 ::-webkit-input-placeholder {
@@ -30,7 +29,7 @@
   color: rgb(39, 37, 37);
   margin-left: 50%;
   opacity: 1;
-  text-indent: 35%;
+  text-indent: 47%;
 }
 
 label {
@@ -38,37 +37,11 @@ label {
   flex-direction: row;
 }
 
-.session-submit {
-  background-color: white;
-  color: black;
-  font-weight: bold;
-  font-size: 1.2vw;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-}
-
-.demo-submit {
-  display: flex;
-  justify-content: center;
-  background-color: white;
-  align-content: center;
-  color: black;
-  font-weight: bold;
-  font-size: 1.2vw;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 240px;
-}
-
 .modal-title {
   display: flex;
   justify-content: center;
-  color: white;
+  color: #0099CC;
+  font-size: 10vh;
 }
 
 .login-demo-message {
@@ -97,18 +70,8 @@ fieldset {
 }
 
 .login-form-box {
-  box-shadow: 0 0 10rem 0 black;	
-  background: #0F0F0F;
-  backdrop-filter: blur(20px);
-  height: 100%;
-  width: 100%;
-  border: solid none;
-  border-radius: 20px;
-  opacity: .8;
-  animation: 0.7s;
+  box-shadow: 0 0 10rem 0 black;
   transition: .4;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 li {
@@ -119,10 +82,13 @@ li {
 }
 
 .errors ul li {
+  display: flex;
+  margin-top: 2vh;
+  justify-content: center;
   color: #ff4444;
+  font-size: 3vw;
 }
 
-/* akldjflksjaf;klj */
 .overlay {
   height: 100%;
   width: 100%;
@@ -161,6 +127,24 @@ li {
   top: 20px;
   right: 45px;
   font-size: 1vw;
+}
+
+.signin-btn, .demo-btn {
+  margin-top: 1vh;
+  font-size: 2vw;
+  width: 60vw;
+}
+
+.signin-btn {
+  margin-right: 1vw;
+}
+
+.signin-btn:focus {
+  background: #00C851;
+}
+
+.demo-btn:focus {
+  background: #00C851;
 }
 
 @media screen and (max-height: 450px) {

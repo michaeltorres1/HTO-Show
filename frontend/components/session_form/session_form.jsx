@@ -57,15 +57,8 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <div onClick={this.props.closeModal} className="close-x">X</div>
-          <div className="errors">{this.renderErrors()}</div>
-          <br />
+          <div onClick={this.props.closeModal} className="close-x"><i class="fas fa-times-circle fa-4x"></i></div>
           <div className="modal-input">
-            <p className="login-demo-message">LOGIN AS DEMO USER</p>
-            <input type="submit" id="demo-btn" onClick={this.update('username')} className="demo-submit" value="DEMO"/>
-            <fieldset className="wrapper-line">
-              <legend>OR</legend>
-            </fieldset>
             <div className="modal-title">
               <h3>SIGN IN</h3>
             </div>
@@ -87,7 +80,11 @@ class SessionForm extends React.Component {
               />
             </label>
             <br />
-            <input className="session-submit" type="submit" value={formType} />
+            <div className="row">
+              <button className="signin-btn" type="submit" value={formType}>SIGN IN</button>
+              <button className="demo-btn" type="submit" id="demo-btn" onClick={this.update('username')} value="DEMO">LOGIN AS DEMO USER</button>
+            </div>
+            <div className="errors">{this.renderErrors()}</div>
           </div>
         </form>
       </div>
