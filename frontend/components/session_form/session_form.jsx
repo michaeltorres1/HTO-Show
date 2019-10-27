@@ -53,6 +53,9 @@ class SessionForm extends React.Component {
   render() {
     let formType = this.props.formType;
     formType = formType.toUpperCase();
+    let sign = "SIGN UP";
+
+    if (formType === "LOGIN") sign = "SIGN IN";
 
     return (
       <div className="login-form-container">
@@ -60,7 +63,7 @@ class SessionForm extends React.Component {
           <div onClick={this.props.closeModal} className="close-x"><i class="fas fa-times-circle fa-4x"></i></div>
           <div className="modal-input">
             <div className="modal-title">
-              <h3>SIGN IN</h3>
+              <h3>{sign}</h3>
             </div>
             <label className="input-person">
               <input type="text"
@@ -81,8 +84,8 @@ class SessionForm extends React.Component {
             </label>
             <br />
             <div className="row">
-              <button className="signin-btn" type="submit" value={formType}>SIGN IN</button>
-              <button className="demo-btn" type="submit" id="demo-btn" onClick={this.update('username')} value="DEMO">LOGIN AS DEMO USER</button>
+              <button className="signin-btn" type="submit" value={formType}>{sign}</button>
+              <button className="demo-btn" type="submit" id="demo-btn" onClick={this.update('username')} value="DEMO">{sign} AS DEMO USER</button>
             </div>
             <div className="errors">{this.renderErrors()}</div>
           </div>

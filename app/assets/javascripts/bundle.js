@@ -1441,6 +1441,8 @@ function (_React$Component) {
     value: function render() {
       var formType = this.props.formType;
       formType = formType.toUpperCase();
+      var sign = "SIGN UP";
+      if (formType === "LOGIN") sign = "SIGN IN";
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -1455,7 +1457,7 @@ function (_React$Component) {
         className: "modal-input"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "modal-title"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "SIGN IN")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, sign)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "input-person"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
@@ -1475,13 +1477,13 @@ function (_React$Component) {
         className: "signin-btn",
         type: "submit",
         value: formType
-      }, "SIGN IN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, sign), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "demo-btn",
         type: "submit",
         id: "demo-btn",
         onClick: this.update('username'),
         value: "DEMO"
-      }, "LOGIN AS DEMO USER")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, sign, " AS DEMO USER")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "errors"
       }, this.renderErrors()))));
     }
