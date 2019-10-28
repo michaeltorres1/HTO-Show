@@ -1045,7 +1045,13 @@ function (_React$Component) {
         className: "nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "left"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        "class": "fab fa-github fa-2x git"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        "class": "fab fa-angellist fa-2x angel"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        "class": "fab fa-linkedin fa-2x linkedin"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "nav-title"

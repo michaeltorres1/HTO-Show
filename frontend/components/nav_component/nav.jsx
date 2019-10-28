@@ -27,7 +27,11 @@ class Nav extends React.Component {
     return (
       <div className="container">
         <div className="nav">
-          <div className="left"></div>
+          <div className="left">
+            <i class="fab fa-github fa-2x git"></i>
+            <i class="fab fa-angellist fa-2x angel"></i>
+            <i class="fab fa-linkedin fa-2x linkedin"></i>
+          </div>
           <div className="middle">
             <h1 className="nav-title">
               <a href="#">HTO SHOW</a>
