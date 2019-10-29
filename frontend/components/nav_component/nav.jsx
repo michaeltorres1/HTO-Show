@@ -28,9 +28,9 @@ class Nav extends React.Component {
       <div className="container">
         <div className="nav">
           <div className="left">
-            <a href=""><i class="fab fa-github fa-2x git"></i></a>
-            <a href=""><i class="fab fa-angellist fa-2x angel"></i></a>
-            <a href=""><i class="fab fa-linkedin fa-2x linkedin"></i></a>
+            <a href="https://github.com/michaeltorres1"><i class="fab fa-github fa-2x git"></i></a>
+            <a href="https://angel.co/michael-torres-21"><i class="fab fa-angellist fa-2x angel"></i></a>
+            <a href="https://www.linkedin.com/in/michael-torres-8649aa178/"><i class="fab fa-linkedin fa-2x linkedin"></i></a>
           </div>
           <div className="middle">
             <h1 className="nav-title">
