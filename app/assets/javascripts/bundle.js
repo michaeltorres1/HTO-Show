@@ -1048,15 +1048,15 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://github.com/michaeltorres1"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        "class": "fab fa-github fa-2x git"
+        "class": "fab fa-github git"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://angel.co/michael-torres-21"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        "class": "fab fa-angellist fa-2x angel"
+        "class": "fab fa-angellist angel"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://www.linkedin.com/in/michael-torres-8649aa178/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        "class": "fab fa-linkedin fa-2x linkedin"
+        "class": "fab fa-linkedin linkedin"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "middle"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
